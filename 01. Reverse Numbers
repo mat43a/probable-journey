@@ -1,0 +1,30 @@
+# Дефиниране на функция за обръщане на целите числа, използвайки стек
+def reverse_integers(input_str):
+    # Разделяме входния низ на списък с цели числа
+    integers = [int(x) for x in input_str.split()]
+
+    # Създаваме празен стек
+    stack = []
+
+    # Поставяме всяко цяло число върху стека
+    for num in integers:
+        stack.append(num)
+
+    # Изваждаме целите числа от стека, за да обърнем реда им
+    reversed_integers = []
+    while stack:
+        reversed_integers.append(stack.pop())
+
+    # Конвертираме обърнатите цели числа обратно в низ
+    reversed_str = ' '.join(map(str, reversed_integers))
+
+    return reversed_str
+
+# Четем входния низ от конзолата
+input_str = input()
+
+# Извикваме функцията за обръщане на целите числа
+reversed_result = reverse_integers(input_str)
+
+# Извеждаме обърнатите цели числа
+print(reversed_result)
