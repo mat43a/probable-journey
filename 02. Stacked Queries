@@ -1,0 +1,25 @@
+n = int(input())
+my_stack = []
+
+for _ in range(n):
+    query = input().split()
+
+    if query[0] == "1":
+        my_stack.append(int(query[1]))
+
+    elif query[0] == "2":
+        if my_stack:
+            my_stack.pop()
+
+    elif query[0] == "3":
+        if my_stack:
+            print(max(my_stack), end=' ')
+
+    elif query[0] == "4":
+        if my_stack:
+            print(min(my_stack), end=' ')
+
+while my_stack:
+    print(my_stack.pop(), end='')
+    if my_stack:
+        print(', ', end='')
